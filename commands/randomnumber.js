@@ -10,7 +10,8 @@ exports.run = (client, message, args) => {
       message.channel.send(gennumber + " - To select times to edit message, add a number after the min number.")
       return
     }
-    if (convert < 0) return message.channel.send("must pick a number")
+    if (convert < 0) return message.channel.send("You must pick a minimum number")
+    if (conver2 < 0) return message.channel.send("You must pick a maximum number")
     let kek = parseInt(times)
     message.channel.send(gennumber)
       .then(msg => {
