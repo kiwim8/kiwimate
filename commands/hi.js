@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
 
 
 exports.conf = {
-  enabled: true,
+  enabled: false, /*disabled because it's useless*/
   guildOnly: false,
   aliases: [],
   permLevel: 0

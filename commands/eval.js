@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
   else
       return text;
 }
-  if(message.author.id != ownerid) return; /* if it isn't the owners id then return. do not let anyone use this*/
+  if(message.author.id != ownerid) return console.log("[EVAL] " + message.author.username + " just tried to use eval."); /* if it isn't the owners id then return. do not let anyone use this*/
 
 
   try {
@@ -32,6 +32,6 @@ exports.conf = {
 
 exports.help = {
   name: 'eval',
-  description: 'evals javascript',
-  usage: '5 * 2'
+  description: 'runs javascript',
+  usage: 'eval [jaavscript]'
 };

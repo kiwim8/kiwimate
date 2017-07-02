@@ -2,7 +2,8 @@ const settings = require('../settings.json');
 
 exports.run = (client, message, args) => {
   if (!message.author.id == settings.ownerid) {
-    message.channel.send("this command can only be used by kiwi")
+    message.channel.send("This command can only be used by the guild owner.")
+    console.log("[ANNOY] command failure.")
     return;
   }
 
@@ -19,6 +20,7 @@ exports.run = (client, message, args) => {
 
   if (times == 0) {
     msg.edit("Finished annoying!")
+    console.log("[ANNOY] Finished sending DMs")
   }
 })
 
@@ -34,6 +36,6 @@ exports.conf = {
 
 exports.help = {
     name: 'annoy',
-    description: 'sends a dm.',
+    description: 'sends lots of dms to a user.',
     usage: 'annoy [mention user] [times to send]'
   };

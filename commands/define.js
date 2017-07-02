@@ -1,6 +1,6 @@
 const urban = require("Urban");
 exports.run = (client, message, args) => {
-  var definitions = urban(args);
+  let definitions = urban(args);
   definitions.first(function(data) {
     if (data == null) {
       message.reply("Could not find a definition!")
@@ -13,13 +13,14 @@ exports.run = (client, message, args) => {
     var author = (data.author)
 
 
-    if (desc.length > 2048) {
-      desc = ("**Message was shortened as it was too long :(** " + definition).substr(0, 1400);
+    if (desc.length > 2000) { /*Discord has limit of 2000 characters so we must shorten the message*/
+      desc = ("**Message was shortened as it was too long :(** " + definition).substr(0, 1400); /*Select characters from 0 to 1400*/
 
     }
 
 
     message.channel.send("Definition: ```" + definition + "```\n Example: ```" + example + "```" + "\n Written by: ```" + author + "```");
+    console.log("[DEFINE] Definition sent.")
   });
 
   };
