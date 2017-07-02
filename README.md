@@ -10,4 +10,4 @@ credit to stackoverflow for some eventloader code
 redit to stackoverflow for some eventloader code and parts of the eval clean.
 
 
-the rest of this code is mainly from me, i use methods that i've learnt from other tutorials in the past.
+the rest of this code is mainly from me, in some parts (such as app.js) i use some code from stackoverflow (although this probably needs a rewrite)
