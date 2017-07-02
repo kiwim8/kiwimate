@@ -8,17 +8,17 @@ const Request = require('Request');
 require('./util/eventLoader')(client);
 
 const log = message => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
+  console.log(`start: ${message}`);
 };
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./commands/', (err, files) => {
   if (err) console.error(err);
-  log(`Loading ${files.length} commands.`);
+  log(`Loading ${files.length} commands.`); /* numbers of commands in /commands*/
   files.forEach(f => {
-    let props = require(`./commands/${f}`);
-    log(`Loaded: ${props.help.name}`);
+    let props = require(`./commands/${f}`); 
+    log(`Loaded: ${props.help.name}`); /*print out name of "help.name for specific command"*/
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
@@ -47,8 +47,7 @@ client.reload = command => {
 };
 
 client.elevation = message => {
-  /* This function should resolve to an ELEVATION level which
-     is then sent to the command handler for verification*/
+/*perms levels below, 2 = mod 3 = admin 4 = owner (owner id in settings) :)*/
   let permlvl = 0;
   let mod_role = message.guild.roles.find('name', settings.modrolename);
   if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 2;
@@ -58,17 +57,4 @@ client.elevation = message => {
   return permlvl;
 };
 
-
-var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
-
-
-client.on('warn', e => {
-  console.log(chalk.bgYellow(e.replace(regToken, 'that was redacted')));
-});
-
-client.on('error', e => {
-  console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
-});
-
-
-client.login(settings.token);
+client.login(settings.token); /*settings blank on this version, merge both version*/
