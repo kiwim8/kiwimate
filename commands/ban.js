@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
 
   if (!message.guild.member(user).bannable) return message.reply('I cannot ban that member');
   message.guild.ban(user, 2);
-
+  console.log(user + " has been banned.")
   modlog.send("Banned: " + user + "\n Reason: " + reason + " \n Moderator: " + message.author.username);
 
 };

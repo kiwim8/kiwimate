@@ -33,5 +33,5 @@ exports.conf = {
 exports.help = {
   name: 'eval',
   description: 'runs javascript',
-  usage: 'eval [jaavscript]'
+  usage: 'eval [javascript]'
 };
