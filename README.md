@@ -21,6 +21,7 @@ removed randomnumber as it's useless.
 
 fixed ban & kick guild message error
 
+removed annoy as it could possibly break tos
 
 - list of what i need to do
 
