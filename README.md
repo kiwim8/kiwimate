@@ -6,5 +6,5 @@ a basic bot for discord
 
 credit to stackoverflow for some eventloader code
 
-redit to stackoverflow for some eventloader code and parts of the eval clean.
+credit to stackoverflow for some eventloader code and parts of the eval clean.
 
